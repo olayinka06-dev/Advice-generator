@@ -13,6 +13,32 @@ export const SpeechButton = () => {
       </button>
     );
 };
+
+export const ThemeButton = () => {
+    return (
+      <label htmlFor="toggleButton" className="relative">
+        <input
+          type="checkbox"
+          id="toggleButton"
+          className="sr-only"
+          checked={isToggled}
+          onChange={handleToggle}
+        />
+        <div
+          className={`w-12 h-6 ${
+            isToggled ? "bg-[rgb(3,40,91)]" : "bg-[rgb(3,40,91)]"
+          } rounded-full transition`}
+        >
+          <div
+            className={`absolute w-4 h-4 bg-white rounded-full top-1 left-1 transition-transform transform ${
+              isToggled ? "translate-x-6" : "translate-x-0"
+            }`}
+          />
+        </div>
+      </label>
+    );
+  };
+
 export const PreLoader = () => {
   return (
     <div className="w-[50px] h-[50px] rounded-full border-solid border-t-[red] border-[5px] animation"></div>
