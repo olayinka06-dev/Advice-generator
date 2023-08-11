@@ -25,7 +25,12 @@
     )
     rgb(var(--background-start-rgb));
 } */
-
+.blur-shadow{
+  box-shadow: 0px 10px 34px hsl(150,100%,66%);
+}
+.blur-shadow:hover{
+  box-shadow: 0px 14px 54px hsl(150,100%,66%);
+}
 .animation{
   animation: animate 4s linear infinite;
 }
