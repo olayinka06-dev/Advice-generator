@@ -6,7 +6,13 @@ export const AdviceContext = createContext({
   handleGenerateJoke: () => {},
   handleCopyJoke: () => {},
   handleSpeakJoke: () => {},
-  handleSwitchTheme: ()=>{}
+  handleStopJoke: ()=>{},
+  handleSwitchTheme: ()=>{},
+  isSpeaking: false,
+  isCopy: false,
+  isLoading: false,
+  jokeQoute: "",
+  error: ""
 });
 
 export const useAdviceContext = () => (
