@@ -5,8 +5,14 @@ import { FaPauseCircle } from "react-icons/fa";
 import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
 import { useAdviceContext } from "../provider/Context";
 
+export const CopyButton = () => {
+    return( 
+      <button></button>
+    );
+};
+
 export const SpeechButton = () => {
-    const { isSpeaking, handleSpeakJoke, handleStopJoke } = useAdviceContext();
+    const { isSpeaking, handleSpeakJoke, handleStopJoke, handleSwitchTheme } = useAdviceContext();
     return (
       <button onClick={isSpeaking ? handleStopJoke : handleSpeakJoke}>
         {isSpeaking ? <FaPauseCircle /> : <BsFillPlayCircleFill />}
@@ -15,6 +21,7 @@ export const SpeechButton = () => {
 };
 
 export const ThemeButton = () => {
+    const { handleSwitchTheme } = useAdviceContext();
     return (
       <label htmlFor="toggleButton" className="relative">
         <input
@@ -22,7 +29,7 @@ export const ThemeButton = () => {
           id="toggleButton"
           className="sr-only"
           checked={isToggled}
-          onChange={handleToggle}
+          onChange={handleSwitchTheme}
         />
         <div
           className={`w-12 h-6 ${
@@ -37,7 +44,7 @@ export const ThemeButton = () => {
         </div>
       </label>
     );
-  };
+};
 
 export const PreLoader = () => {
   return (

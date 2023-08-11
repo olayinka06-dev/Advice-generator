@@ -8,7 +8,6 @@ export const AdviceContext = createContext({
   handleSpeakJoke: () => {},
   handleStopJoke: ()=>{},
   handleSwitchTheme: ()=>{},
-  handleToggle: ()=>{},
   isSpeaking: false,
   isToggled: false,
   isCopy: false,

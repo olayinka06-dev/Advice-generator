@@ -68,12 +68,12 @@ export const AppWrapper = ({ children }) => {
     
   }
 
-  const handleToggle = () => {
+  const handleSwitchTheme = () => {
     setToggled((prevState) => !prevState);
   };
 
   return (
-    <AdviceContext.Provider value={{ handleGenerateJoke, handleSpeakJoke, handleToggle, handleStopJoke, handleCopyJoke, isToggled, jokeQoute, error, isLoading, isSpeaking }}>
+    <AdviceContext.Provider value={{ handleGenerateJoke, handleSpeakJoke, handleSwitchTheme, handleStopJoke, handleCopyJoke, isToggled, jokeQoute, error, isLoading, isSpeaking }}>
       {children}
     </AdviceContext.Provider>
   );
