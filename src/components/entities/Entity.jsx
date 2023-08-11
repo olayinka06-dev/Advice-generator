@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { BsFillPlayCircleFill } from "react-icons/bs";
+import { BsDice5Fill, BsFillPlayCircleFill } from "react-icons/bs";
 import { FaPauseCircle } from "react-icons/fa";
 import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
 import { useAdviceContext } from "../provider/Context";
@@ -20,7 +20,28 @@ export const SpeechButton = () => {
 };
 
 export const ThemeButton = () => {
-  return <button></button>;
+  return (
+    <label htmlFor="toggleButton" className="relative">
+      <input
+        type="checkbox"
+        id="toggleButton"
+        className="sr-only"
+        checked={isToggled}
+        onChange={handleToggle}
+      />
+      <div
+        className={`w-12 h-6 ${
+          isToggled ? "bg-[rgb(3,40,91)]" : "bg-[rgb(3,40,91)]"
+        } rounded-full transition`}
+      >
+        <div
+          className={`absolute w-4 h-4 bg-white rounded-full top-1 left-1 transition-transform transform ${
+            isToggled ? "translate-x-6" : "translate-x-0"
+          }`}
+        />
+      </div>
+    </label>
+  );
 };
 
 export const PreLoader = () => {

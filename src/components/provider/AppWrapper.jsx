@@ -9,6 +9,8 @@ export const AppWrapper = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isCopy, setIsCopy] = useState(false);
+  const [isToggled, setToggled] = useState(false);
+
 
   useEffect(() => {
     setIsLoading(true)
@@ -66,8 +68,12 @@ export const AppWrapper = ({ children }) => {
     
   }
 
+  const handleToggle = () => {
+    setToggled((prevState) => !prevState);
+  };
+
   return (
-    <AdviceContext.Provider value={{ handleGenerateJoke, handleSpeakJoke, handleStopJoke, handleCopyJoke, jokeQoute, error, isLoading, isSpeaking }}>
+    <AdviceContext.Provider value={{ handleGenerateJoke, handleSpeakJoke, handleToggle, handleStopJoke, handleCopyJoke, isToggled, jokeQoute, error, isLoading, isSpeaking }}>
       {children}
     </AdviceContext.Provider>
   );
