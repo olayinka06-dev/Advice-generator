@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <section
       className={`min-h-screen px-5 flex flex-col justify-center items-center ${
-        isToggled ? "bg-[rgb(214,219,220)]" : "bg-[#202632]"
+        isToggled ? "light-mode bg-[var(--primary-color)]" : "dark-mode bg-[var(--primary-color)]"
       } w-full `}
     >
       <ThemeButton />

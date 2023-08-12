@@ -10,7 +10,7 @@ export const CopyButton = () => {
 
   return (
     <button
-      className="py-[10px] rounded-2xl hover:bg-transparent px-5 bg-[hsl(150,100%,66%)] border transition duration-400 ease-linear border-transparent border-solid hover:text-[hsl(193,38%,86%)] hover:border hover:border-solid hover:border-[hsl(150,100%,66%)]"
+      className="py-[10px] rounded-2xl text-[var(--btn-color)] hover:bg-transparent px-5 bg-[hsl(150,100%,66%)] border transition duration-400 ease-linear border-transparent border-solid hover:text-[hsl(193,38%,86%)] hover:border hover:border-solid hover:border-[hsl(150,100%,66%)]"
       onClick={handleCopyJoke}
       disabled={validateButton ? false : true}
     >
@@ -24,7 +24,7 @@ export const SpeechButton = () => {
     useAdviceContext();
   return (
     <button
-      className="py-[10px] rounded-2xl hover:bg-transparent px-5 bg-[hsl(150,100%,66%)] border transition duration-400 ease-linear border-transparent border-solid hover:text-[hsl(193,38%,86%)] hover:border hover:border-solid hover:border-[hsl(150,100%,66%)] text-[19px]"
+      className="py-[10px] rounded-2xl hover:bg-transparent px-5 bg-[hsl(150,100%,66%)] border transition duration-400 ease-linear border-transparent text-[var(--btn-color)] border-solid hover:text-[hsl(193,38%,86%)] hover:border hover:border-solid hover:border-[hsl(150,100%,66%)] text-[19px]"
       onClick={isSpeaking ? handleStopJoke : handleSpeakJoke}
       disabled={validateButton ? false : true}
     >
