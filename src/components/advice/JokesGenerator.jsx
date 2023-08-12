@@ -6,7 +6,7 @@ import { CopyButton, GeneratedJoke, PreLoader, SpeechButton } from "../entities/
 const JokesGenerator = () => {
   const { jokeQoute, error, isLoading, } = useAdviceContext();
   return (
-    <div className="bg-[#313A49] flex flex-col gap-3 relative px-6 max-w-[500px] w-full py-3 rounded-2xl min-h-[40vh]">
+    <div className="bg-[#313A49] flex flex-col gap-3 relative px-6 max-w-[500px] w-full py-3 rounded-2xl min-h-[48vh]">
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
             <SpeechButton />
@@ -27,7 +27,7 @@ const JokesGenerator = () => {
             <div className="text-center">
               {jokeQoute && (
                 <span className="text-[hsl(193,38%,86%)] text-[20px]">
-                  &quot; {jokeQoute.slip.advice} &quot;
+                  &quot;{jokeQoute.slip.advice}&quot;
                 </span>
               )}
             </div>
