@@ -64,6 +64,9 @@ export const AppWrapper = ({ children }) => {
   const handleCopyJoke = () => {
     setIsCopy(!isCopy);
     navigator.clipboard.writeText(jokeQoute.slip.advice);
+    setTimeout(() => {
+      setIsCopy(false)
+    }, 2000);
   };
 
   const handleSwitchTheme = () => {
@@ -76,6 +79,7 @@ export const AppWrapper = ({ children }) => {
     handleSwitchTheme,
     handleStopJoke,
     handleCopyJoke,
+    isCopy,
     isToggled,
     jokeQoute,
     error,
