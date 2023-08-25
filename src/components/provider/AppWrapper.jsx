@@ -24,7 +24,7 @@ export const AppWrapper = ({ children }) => {
       setJokeQoute(response.data);
       setError("");
       setIsLoading(false);
-      setValidateButton(true)
+      setValidateButton(true);
     } catch (error) {
       if (error.response) {
         setError(`Unable to generate Joke Please try again.`);
@@ -70,22 +70,22 @@ export const AppWrapper = ({ children }) => {
     setToggled((prevState) => !prevState);
   };
 
+  const allData = {
+    handleGenerateJoke,
+    handleSpeakJoke,
+    handleSwitchTheme,
+    handleStopJoke,
+    handleCopyJoke,
+    isToggled,
+    jokeQoute,
+    error,
+    isLoading,
+    isSpeaking,
+    validateButton,
+  };
+
   return (
-    <AdviceContext.Provider
-      value={{
-        handleGenerateJoke,
-        handleSpeakJoke,
-        handleSwitchTheme,
-        handleStopJoke,
-        handleCopyJoke,
-        isToggled,
-        jokeQoute,
-        error,
-        isLoading,
-        isSpeaking,
-        validateButton
-      }}
-    >
+    <AdviceContext.Provider value={{ allData }}>
       {children}
     </AdviceContext.Provider>
   );
