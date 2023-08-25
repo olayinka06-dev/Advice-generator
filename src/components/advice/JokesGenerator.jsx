@@ -4,7 +4,7 @@ import { useAdviceContext } from "../provider/Context";
 import { CopyButton, GeneratedJoke, PreLoader, SpeechButton } from "../entities/Entity";
 
 const JokesGenerator = () => {
-  const { jokeQoute, error, isLoading, } = useAdviceContext();
+  const { allData } = useAdviceContext();
   return (
     <section>
       <h1 className="text-center text-[var(--text-color)] text-[30px]">The Advice Generator</h1>
@@ -14,22 +14,22 @@ const JokesGenerator = () => {
             <SpeechButton />
             <CopyButton />
           </div>
-          {isLoading ? (
+          {allData.isLoading ? (
             <PreLoader />
           ) : (
             <div className="flex flex-col gap-1">
               <div className="text-center">
-                {jokeQoute && (
+                {allData.jokeQoute && (
                   <h3 className="text-[hsl(150,100%,66%)]">
-                    Advice # {jokeQoute.slip.id}
+                    Advice # {allData.jokeQoute.slip.id}
                   </h3>
                 )}
-                {error && <p className="text-[red]">{error}</p>}
+                {allData.error && <p className="text-[red]">{allData.error}</p>}
               </div>
               <div className="text-center">
-                {jokeQoute && (
+                {allData.jokeQoute && (
                   <span className="text-[hsl(193,38%,86%)] text-[20px]">
-                    &quot;{jokeQoute.slip.advice}&quot;
+                    &quot;{allData.jokeQoute.slip.advice}&quot;
                   </span>
                 )}
               </div>
