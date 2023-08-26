@@ -42,7 +42,32 @@ export const AppWrapper = ({ children }) => {
     }
   };
 
-
+  const generateJokeById = async () => {
+    try {
+      const ADVICE_URL = `https://api.adviceslip.com/advice/${inputValue}`;
+      const response = await axios.get(ADVICE_URL);
+      setJokeQoute(response.data);
+      setError("");
+      setIsLoading(false);
+      setValidateButton(true);
+      setInputValue("");
+    } catch (error) {
+      if (error.response) {
+        setError(`Unable to generate Joke Please try again.`);
+        setIsLoading(false);
+      } else if (error.request) {
+        setError(`Poor Internet Connection, please try again later.`);
+        setIsLoading(false);
+      } else if(inputValue > 0 && inputValue <= 224){
+        setError("Too Big number")
+      }
+       else {
+        setError("Something happened unexpectedly.");
+        setIsLoading(false);
+      }
+      console.error(error);
+    }
+  };
 
   const handleSpeakJoke = () => {
     const generatedAdvice = jokeQoute.slip.advice;
