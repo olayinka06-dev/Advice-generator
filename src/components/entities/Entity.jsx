@@ -99,5 +99,21 @@ export const PreLoader = () => {
 };
 
 
-
+export const SearchById = () => {
+  const {allData} = useAdviceContext()
+  return (
+    <div className={`bg-[rgba(0,0,0.5)] text-[var(--text-color)] p-1 rounded flex items-center gap-1 ${allData.isValid ? 'border-green-500' : 'border-red-500'}`}>
+      <BiSearch/>
+      <input
+        placeholder="Alternatively search by ID number"
+        disabled={allData.isLoading}
+        max={3}
+        className={`outline-none bg-transparent text-sm ${allData.isValid ? 'text-green-500' : 'text-red-500'}`}
+        type="search"
+        value={allData.inputValue}
+        onChange={allData.handleInputChange}
+      />
+    </div>
+  );
+}
 
