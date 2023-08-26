@@ -103,7 +103,14 @@ export const AppWrapper = ({ children }) => {
     setToggled((prevState) => !prevState);
   };
 
+  const handleInputChange = async (e) => {
+    const value = e.target.value;
+    setInputValue(value);
 
+    // Check if the input value is a valid number
+    const isValidNumber = !isNaN(value) && value.trim() !== "" && value > 0 && value <= 224;
+    setIsValid(isValidNumber);
+  };
 
   const allData = {
     handleGenerateJoke,
