@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { BsDice5Fill, BsFillPlayCircleFill } from "react-icons/bs";
+import {BiSearch} from 'react-icons/bi'
 import { FaPauseCircle } from "react-icons/fa";
 import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
 import { useAdviceContext } from "../provider/Context";
@@ -39,7 +40,7 @@ export const GeneratedJoke = () => {
   return (
     <button
       onClick={allData.handleGenerateJoke}
-      className="bg-[hsl(150,100%,66%)] blur-shadow p-4 rounded-full"
+      className={`bg-[hsl(150,100%,66%)] blur-shadow p-4 rounded-full ${allData.isLoading ? ' cursor-not-allowed opacity-50' : ''}`}
     >
       <BsDice5Fill />
     </button>
@@ -96,3 +97,7 @@ export const PreLoader = () => {
     <div className="w-[50px] h-[50px] rounded-full mx-auto border-solid border-t-[hsl(193,23%,77%)] border-[hsl(150,100%,66%)] border-[5px] animation"></div>
   );
 };
+
+
+
+

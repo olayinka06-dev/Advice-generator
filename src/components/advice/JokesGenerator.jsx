@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useAdviceContext } from "../provider/Context";
-import { CopyButton, GeneratedJoke, PreLoader, SpeechButton } from "../entities/Entity";
+import { CopyButton, GeneratedJoke, PreLoader, SearchById, SpeechButton } from "../entities/Entity";
 
 const JokesGenerator = () => {
   const { allData } = useAdviceContext();
@@ -10,8 +10,9 @@ const JokesGenerator = () => {
       <h1 className="text-center text-[var(--text-color)] text-[30px]">The Advice Generator</h1>
       <div className="bg-[var(--secondary-color)] shadow flex flex-col gap-3 relative px-6 max-w-[500px] w-full py-3 rounded-2xl min-h-[48vh]">
         <div className="flex flex-col gap-2">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between gap-2 items-center">
             <SpeechButton />
+            <SearchById/>
             <CopyButton />
           </div>
           {allData.isLoading ? (

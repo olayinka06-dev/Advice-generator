@@ -9,13 +9,17 @@ export const AdviceContext = createContext({
     handleSpeakJoke: () => {},
     handleStopJoke: ()=>{},
     handleSwitchTheme: ()=>{},
+    handleInputChange: ()=>{},
+    setInputValue: ()=>{},
     isSpeaking: false,
     validateButton: false,
     isToggled: false,
     isCopy: false,
     isLoading: false,
     jokeQoute: "",
-    error: ""
+    error: "",
+    inputValue: "",
+    isValid: true,
   }
 });
 

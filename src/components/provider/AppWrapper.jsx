@@ -11,6 +11,8 @@ export const AppWrapper = ({ children }) => {
   const [isCopy, setIsCopy] = useState(false);
   const [isToggled, setToggled] = useState(false);
   const [validateButton, setValidateButton] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
@@ -40,6 +42,8 @@ export const AppWrapper = ({ children }) => {
     }
   };
 
+
+
   const handleSpeakJoke = () => {
     const generatedAdvice = jokeQoute.slip.advice;
     const utterance = new SpeechSynthesisUtterance(generatedAdvice);
@@ -56,16 +60,17 @@ export const AppWrapper = ({ children }) => {
     setIsSpeaking(false);
   };
 
-  const handleGenerateJoke = () => {
+  const handleGenerateJoke = async () => {
     setIsLoading(true);
-    generateJoke();
+
+    inputValue ? generateJokeById() : generateJoke();
   };
 
   const handleCopyJoke = () => {
     setIsCopy(!isCopy);
     navigator.clipboard.writeText(jokeQoute.slip.advice);
     setTimeout(() => {
-      setIsCopy(false)
+      setIsCopy(false);
     }, 2000);
   };
 
@@ -73,12 +78,15 @@ export const AppWrapper = ({ children }) => {
     setToggled((prevState) => !prevState);
   };
 
+
+
   const allData = {
     handleGenerateJoke,
     handleSpeakJoke,
     handleSwitchTheme,
     handleStopJoke,
     handleCopyJoke,
+    handleInputChange,
     isCopy,
     isToggled,
     jokeQoute,
@@ -86,6 +94,8 @@ export const AppWrapper = ({ children }) => {
     isLoading,
     isSpeaking,
     validateButton,
+    inputValue,
+    isValid,
   };
 
   return (
