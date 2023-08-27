@@ -45,7 +45,7 @@ export const AppWrapper = ({ children }) => {
   const generateJokeById = async () => {
     try {
       const ADVICE_URL = `https://api.adviceslip.com/advice/${inputValue}`;
-      const response = await axios.get(ADVICE_URL);
+      const response = !isNaN(inputValue) && inputValue.trim() !== "" && inputValue > 0 && inputValue <= 224 && await axios.get(ADVICE_URL);
       setJokeQoute(response.data);
       setError("");
       setIsLoading(false);
@@ -70,7 +70,7 @@ export const AppWrapper = ({ children }) => {
   };
 
   const handleSpeakJoke = () => {
-    const generatedAdvice = jokeQoute.slip.advice;
+    const generatedAdvice = jokeQoute.slip && jokeQoute && jokeQoute.slip.advice;
     const utterance = new SpeechSynthesisUtterance(generatedAdvice);
     utterance.addEventListener("end", () => {
       setIsSpeaking(false);
@@ -93,7 +93,7 @@ export const AppWrapper = ({ children }) => {
 
   const handleCopyJoke = () => {
     setIsCopy(!isCopy);
-    navigator.clipboard.writeText(jokeQoute.slip.advice);
+    navigator.clipboard.writeText(jokeQoute.slip && jokeQoute && jokeQoute.slip.advice);
     setTimeout(() => {
       setIsCopy(false);
     }, 2000);
@@ -110,6 +110,7 @@ export const AppWrapper = ({ children }) => {
     // Check if the input value is a valid number
     const isValidNumber = !isNaN(value) && value.trim() !== "" && value > 0 && value <= 224;
     setIsValid(isValidNumber);
+    !isValidNumber ? setError("Number is Too Big, Enter Between the Range of 1 - 224") : setError("")
   };
 
   const allData = {

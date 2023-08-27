@@ -20,15 +20,15 @@ const JokesGenerator = () => {
           ) : (
             <div className="flex flex-col gap-1">
               <div className="text-center">
-                {allData.jokeQoute && (
+                {allData.jokeQoute && allData.jokeQoute.slip && (
                   <h3 className="text-[hsl(150,100%,66%)]">
                     Advice # {allData.jokeQoute.slip.id}
                   </h3>
                 )}
-                {allData.error && <p className="text-[red]">{allData.error}</p>}
+                {allData.error && <p className="text-[red] bg-[rgba(0,0,0.5)] rounded">{allData.error}</p>}
               </div>
               <div className="text-center">
-                {allData.jokeQoute && (
+                {allData.jokeQoute && allData.jokeQoute.slip && (
                   <span className="text-[hsl(193,38%,86%)] text-[20px]">
                     &quot;{allData.jokeQoute.slip.advice}&quot;
                   </span>

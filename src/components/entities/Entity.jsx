@@ -40,6 +40,7 @@ export const GeneratedJoke = () => {
   return (
     <button
       onClick={allData.handleGenerateJoke}
+      disabled={isNaN(allData.inputValue) || allData.inputValue < 0 || allData.inputValue > 224}
       className={`bg-[hsl(150,100%,66%)] blur-shadow p-4 rounded-full ${allData.isLoading ? ' cursor-not-allowed opacity-50' : ''}`}
     >
       <BsDice5Fill />
@@ -105,7 +106,7 @@ export const SearchById = () => {
     <div className={`bg-[rgba(0,0,0.5)] text-[var(--text-color)] p-1 rounded flex items-center gap-1 ${allData.isValid ? 'border-green-500' : 'border-red-500'}`}>
       <BiSearch/>
       <input
-        placeholder="Alternatively search by ID number"
+        placeholder="search alternatively by ID number"
         disabled={allData.isLoading}
         max={3}
         className={`outline-none bg-transparent text-sm ${allData.isValid ? 'text-green-500' : 'text-red-500'}`}
