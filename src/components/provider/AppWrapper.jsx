@@ -114,20 +114,13 @@ export const AppWrapper = ({ children }) => {
   };
 
   const allData = {
-    handleGenerateJoke,
-    handleSpeakJoke,
-    handleSwitchTheme,
-    handleStopJoke,
-    handleCopyJoke,
-    handleInputChange,
-    isCopy,
-    isToggled,
-    jokeQoute,
-    error,
-    isLoading,
-    isSpeaking,
-    validateButton,
-    inputValue,
+    handleGenerateJoke, handleSpeakJoke,
+    handleSwitchTheme, handleStopJoke,
+    handleCopyJoke, handleInputChange,
+    isCopy, isToggled,
+    jokeQoute, error,
+    isLoading, isSpeaking,
+    validateButton, inputValue,
     isValid,
   };
 
