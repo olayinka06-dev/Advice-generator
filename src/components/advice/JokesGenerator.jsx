@@ -8,7 +8,7 @@ const JokesGenerator = () => {
   return (
     <section>
       <h1 className="text-center text-[var(--text-color)] text-[20px] md:text-[30px]">The Advice Generator</h1>
-      <div className="bg-[var(--secondary-color)] shadow flex flex-col gap-3 w-full max-w-[450px] relative px-4 md:px-6 py-3 rounded-2xl h-80">
+      <div className="bg-[var(--secondary-color)] shadow flex flex-col gap-3 w-full max-w-[450px] relative px-4 md:px-6 py-3 rounded-2xl h-[18rem] md:h-80">
         <div className="flex flex-col gap-2">
           <div className="flex justify-between gap-2 items-center">
             <SpeechButton />
@@ -38,7 +38,7 @@ const JokesGenerator = () => {
           )}
         </div>
         <div className="">
-          <img className="w-full" src="/images/pattern-divider-mobile.svg" alt="border" />
+          <img className={`${allData.jokeQoute ? "" : "mt-[5rem]"} w-full`} src="/images/pattern-divider-mobile.svg" alt="border" />
         </div>
         <div className="flex flex-col items-center justify-center">
           <div className="absolute bottom-[-15px]">
