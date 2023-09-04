@@ -24,6 +24,17 @@
   /* --btn-color: #fff; */
 }
 
+::-webkit-scrollbar {
+  width: 10px; 
+} 
+::-webkit-scrollbar-track {
+  background: #313A49;  
+} 
+::-webkit-scrollbar-thumb {
+  background: #b7b7b7; 
+  border-radius: 10px; 
+}
+
 
 .blur-shadow{
   box-shadow: 0px 10px 34px hsl(150,100%,66%);
