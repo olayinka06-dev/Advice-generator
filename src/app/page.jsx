@@ -7,7 +7,7 @@ export default function Home() {
   const { allData } = useAdviceContext();
   return (
     <section
-      className={`min-h-screen px-5 flex flex-col justify-center items-center ${
+      className={`min-h-screen py-10 px-5 flex flex-col justify-center items-center ${
         allData.isToggled
           ? "light-mode bg-[var(--primary-color)]"
           : "dark-mode bg-[var(--primary-color)]"
@@ -15,12 +15,6 @@ export default function Home() {
     >
       <ThemeButton />
       <JokesGenerator />
-      <div className="text-[var(--text-color)] absolute text-center bottom-1">
-        <span className="">
-          Built with Love by <span className="text-[red]">Olayinka_Dev</span>
-        </span> <br />
-        <span>Follow and give it a star on </span><button>Github</button>
-      </div>
     </section>
   );
 }
